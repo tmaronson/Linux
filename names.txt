@@ -1,0 +1,3 @@
+cn=lisa,dc=example,dc=com
+cn=bob,dc=example,dc=com
+cn=tim,dc=example,dc=com

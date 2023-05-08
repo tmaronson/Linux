@@ -1,0 +1,20 @@
+
+permissions
+first 9 columns of ll or long listing
+col. 1 - what kind of file? ex: d for directory or l for link, blank for regular file
+col. 2 - 10: rwx which is 4, 2, 1 for user, group, all 644 is rw r r (ugo)
+
+In summary you have a lot of the commands that we went over.
+For tomorrow,
+1. video
+2. Try to look at some basic vim or another Linux editor.
+3. basic regex for grep and sed
+4. If time some awk.
+5. Many commands we discussed but so many other useful commands and concepts.
+5. But no sweat, we will cover tomorrow.
+
+for today in coach session:
+
+1. please review and study find, awk, sed, grep (regex)
+2. Look at expr, eval (bc), tr
+3. if, case, read, readarray, for (scripts)

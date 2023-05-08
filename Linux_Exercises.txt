@@ -1,0 +1,153 @@
+Exercises - Use the virtual Linux or Bash sandboxes in O'Reilly (Look up Linux Sandbox or Bash Sandbox from search box on home page)
+or another Linux machine. You can use Git Bash which simulates Linux but you cannot complete all the exercises with Git Bash. 
+
+
+Make Model  Year Price
+
+ford mondeo 1990 5800
+
+ford fiesta 1991 4575
+
+honda accord 1991 6000
+
+toyota tercel 1992 6500
+
+buick century 1990 5950
+
+buick century 1991 6450
+
+Using the above data create a file called cars.txt. Solve the following 3 questions using awk or nawk:
+1. Find all cars with the make "buick".
+2. Find all cars newer than 1990.
+3. Find all cars with a price between 5500 and 6500 inclusive.
+4. Use grep to solve question 1.
+5. Use sed to replace "honda accord" with "honda civic".
+6. Use a Linux editor to add the following rows to cars.txt.
+
+ford escort 2018 4200
+
+chevrolet impala 2019 18700
+
+volkswagen jetta 2016 11200
+
+7. Use and understand all the basic file commands below. For all exercises please make use of the "man" command.
+   
+touch file1
+Create file1
+
+cat file1 file2
+Concatenate files and output
+
+less file1
+View and paginate file1
+
+more file1
+View and paginate file1
+
+file file1
+Get type of file1
+
+cp file1 file2
+Copy file1 to file2
+
+mv file1 file2
+Move (rename) file1 to file2
+
+rm file1
+Delete file1
+
+head file1
+Show first 10 lines of file1
+
+tail file1
+Show last 10 lines of file1
+
+tail -F file1
+Output last lines of file1 as it changes
+
+sed <options>
+stream editor - know many options used to delete lines, replace text, and others
+
+grep, egrep <options>
+search for patterns
+
+vim, emacs, nano editors   Understand how to use one of these and be able to get information to 
+                           perform various tasks.
+
+
+8. Use and understand the file redirection commands below. Please understand stdin(0), stdout(1), stderr(2) and how to redirect.
+   Check the concept of /dev/null as in redirection with 2> /dev/null or 1>&2 where & is a file descriptor.
+   example: Do you see that 2> /dev/null could be placed into a shell script where you don't want the user to see any errors
+   or exceptions (when they execute it) even if they are expected to occur in certain cases? Also look at cmd1 || cmd2
+   where cmd2 will run if cmd 1 is not successful.
+   
+cmd < file
+Input of cmd from file
+
+cmd1 <(cmd2)
+Output of cmd2 as file input to cmd1
+cmd > file
+Standard output (stdout) of cmd to file
+
+cmd > /dev/null
+Discard stdout of cmd
+
+cmd >> file
+Append stdout to file
+
+cmd 2> file
+Error output (stderr) of cmd to file
+
+cmd 1>&2
+stdout to same place as stderr
+
+cmd 2>&1
+stderr to same place as stdout
+
+cmd &> file
+Every output of cmd to file
+
+(cmd refers to a command.)
+
+9. Basic commands review. Reinforce your understanding of the commands below.
+ls, mkdir, cd, rm, cp, whoami, which, cat, mv, pwd, echo, touch, date, chmod, wc,   (list can be very large)
+
+10. One command that can be useful to put in a boot file like .bashrc is the primary prompt below.
+    This uses an environmental variable PWD which you know as pwd (present working directory). The
+	variable for primary prompt is PS1 so the terminal prompt will show the directory of the system.
+	PS1='${PWD}>'
+	
+11. Understand the quotes and $ for Linux in terms of " (double), ' (single), ` (back quote)
+	a=22; echo a; echo $a; echo "$a"; echo '$a'  What do you see?
+	
+12. b=`echo $a`; echo $b    
+    b=echo $a 2> /dev/null; ecsho $b  What is different in output here from statement 1?
+	
+13. File permissions  r = 4, w = 2, x = 1
+	a. cd to home directory. You can use ~ for home. Your home directory is root. Environmental variable is $HOME.
+	   Also you can just use cd and it defaults to home directory.
+	   touch sample.txt - create a file.
+	   ls -al  You see permissions of 655 for ugo - owner, group, other
+	   chmod 666 sample.txt; ll sample.txt  (alias for ls -al)  See permissions of 666 for sample.txt
+	   chmod a-w sample.txt; ll sample.txt  Remove write permission for all. See permissions of 444 now.
+	   
+14. positional parameters $1, $2 
+	$0	The filename of the current script.
+	$n	These variables correspond to the arguments with which a script was invoked. Here n is a positive decimal number corresponding to the position of an argument (the first argument is $1, the second argument is $2, and so on).
+	$$	The process ID of the current shell. For shell scripts, this is the process ID under which they are executing.
+	$#	The number of arguments supplied to a script.
+	$@	All the arguments are individually double quoted. If a script receives two arguments, $@ is equivalent to $1 $2.
+	$*	All the arguments are double quoted. If a script receives two arguments, $* is equivalent to $1 $2.
+	$?	The exit status of the last command executed.
+	$!	The process ID of the last background command.
+	$_	The last argument of the previous command. 
+		
+	Example: ll; echo $? returns 0 exit status so no errors
+	         kjkjkj: echo $? returns non-zero exit status due to error in command
+	
+15. We may not have time to review shell scripting in much detail. To make a file executable as for a script file,
+    you add x or executable permission. These files typically have an extension of sh.
+	chmod +x filename would add executable permission to all users for filename. Then entering ./filename or sh filename, 
+	depending on shell, will run the script. Please continue with understanding of scripts and many other aspects of Linux.
+	Keep practicing throughout the course. Linux will be very useful to know.
+

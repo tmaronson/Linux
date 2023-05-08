@@ -1,0 +1,108 @@
+Make Model  Year Price
+
+ford mondeo 1990 5800
+
+ford fiesta 1991 4575
+
+honda accord 1991 6000
+
+toyota tercel 1992 6500
+
+buick century 1990 5950
+
+buick century 1991 6450
+
+Using the above data table solve the following 3 questions using awk or nawk:
+1. Find all cars with the make "buick".
+2. Find all cars newer than 1990.
+3. Find all cars with a price between 5500 and 6500 inclusive.
+4. Use grep to solve question 1.
+5. Use sed to replace "honda accord" with "honda civic".
+6. Use a Linux editor to add the following rows to cars.txt.
+
+ford escort 2018 4200
+
+chevrolet impala 2019 18700
+
+volkswagen jetta 2016 11200
+
+7. Use and understand all the basic file commands below. For all exercises please make use of the "man" command.
+   Use the virtual linux machine in O'Reilly. 
+
+touch file1
+Create file1
+
+cat file1 file2
+Concatenate files and output
+
+less file1
+View and paginate file1
+
+file file1
+Get type of file1
+
+cp file1 file2
+Copy file1 to file2
+mv file1 file2
+Move file1 to file2
+
+rm file1
+Delete file1
+
+head file1
+Show first 10 lines of file1
+
+tail file1
+Show last 10 lines of file1
+
+tail -F file1
+Output last lines of file1 as it changes
+
+8. Use and understand the file redirection commands below. Please understand stdin(0), stdout(1), stderr(2) and how to redirect.
+   Check the concept of /dev/null as in redirection with 2> /dev/null or 1>&2 where & is a file descriptor.
+   example: Do you see that 2> /dev/null could be placed into a shell script where you don't want the user to see any errors
+   or exceptions (when they execute it) even if they are expected to occur in certain cases? Also look at cmd1 || cmd2
+   where cmd2 will run if cmd 1 is not successful.
+   
+cmd < file
+Input of cmd from file
+
+cmd1 <(cmd2)
+Output of cmd2 as file input to cmd1
+cmd > file
+Standard output (stdout) of cmd to file
+
+cmd > /dev/null
+Discard stdout of cmd
+
+cmd >> file
+Append stdout to file
+
+cmd 2> file
+Error output (stderr) of cmd to file
+
+cmd 1>&2
+stdout to same place as stderr
+
+cmd 2>&1
+stderr to same place as stdout
+
+cmd &> file
+Every output of cmd to file
+
+(cmd refers to a command.)
+
+9. Basic commands review. Reinforce your understanding of the commands below.
+ls, mkdir, cd, rm, cp, whoami, which, cat, mv, pwd, echo  (list can be very large)
+
+10. One command that can be useful to put in a boot file like .bashrc is the primary prompt below.
+    This uses an environmental variable PWD which you know as pwd (present working directory). The
+	variable for primary prompt is PS1 so the terminal prompt will show the directory of the system.
+	PS1='${PWD}>'
+	
+11. Understand the quotes and $ for Linux in terms of " (double), ' (single), ` (back quote)
+	a=22; echo a; echo $a; echo "$a"; echo '$a'  What do you see?
+	
+12. b=`echo $a`; echo $b    
+    b=echo $a 2> /dev/null; ecsho $b  What is different in output here from statement 1?
+
