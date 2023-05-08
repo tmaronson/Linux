@@ -1,0 +1,16 @@
+
+How to Calculate Umask Values
+Linux uses the following default mask and permission values:
+
+The system default permission values are 777 (rwxrwxrwx) for folders and 666 (rw-rw-rw-) for files.
+The default mask for a non-root user is 002, changing the folder permissions to 775 (rwxrwxr-x), 
+and file permissions to 664 (rw-rw-r--).
+The default mask for a root user us 022, changing the folder permissions to 755 (rwxr-xr-x), 
+and file permissions to 644 (rw-r--r--).
+This shows us that the final permission value is the result of subtracting the umask value 
+from the default permission value (777 or 666).
+
+For example, if you want to change the folder permission value from 777 (read, write, and execute
+for all) to 444 (read for all), you need to apply a umask value of 333, since:
+
+777 - 444 = 333

@@ -1,0 +1,6 @@
+echo "The number of arguments for this script \$n is $#"
+echo "The name of this script is \$0 is $0"
+echo "The arguments for this script by position \$1 \$2 \$3 ... are $1 $2 $3"
+echo "The arguments for this script by position and individually double quoted \"one\" \"two\" \"three\" \$@ ... are $@"
+echo "The arguments for this script by position and double quoted \"one two three\" \$* ... are $*"
+echo "We may get to special process variables \$\$ $$ and \$! $! but not critical now."
